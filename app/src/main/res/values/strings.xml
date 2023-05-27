@@ -9,4 +9,6 @@
     <string name="close_icon">Close Icon</string>
     <string name="list_screen_title">Tasks</string>
     <string name="empty_content">No tasks found.</string>
+    <string name="add_task">Add Task</string>
+    <string name="back_arrow">Back Arrow</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.todocompose.navigation.destinations
+package com.example.todocompose.ui.screens.list.destinations
 
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType

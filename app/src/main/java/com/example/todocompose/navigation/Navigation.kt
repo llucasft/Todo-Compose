@@ -4,8 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import com.example.todocompose.navigation.destinations.listComposable
-import com.example.todocompose.navigation.destinations.taskComposable
+import com.example.todocompose.ui.screens.list.destinations.listComposable
+import com.example.todocompose.ui.screens.list.destinations.taskComposable
 import com.example.todocompose.ui.viewmodels.SharedViewModel
 import com.example.todocompose.util.Constants.LIST_SCREEN
 
