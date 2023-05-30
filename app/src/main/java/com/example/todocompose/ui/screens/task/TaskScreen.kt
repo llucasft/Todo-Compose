@@ -3,6 +3,7 @@ package com.example.todocompose.ui.screens.task
 import android.annotation.SuppressLint
 import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
+import com.example.todocompose.data.models.Priority
 import com.example.todocompose.data.models.ToDoTask
 import com.example.todocompose.util.Action
 
@@ -19,6 +20,15 @@ fun TaskScreen(
                 navigateToListScreen = navigateToListScreen
             )
         },
-        content = {}
+        content = {
+            TaskContent(
+                title = "",
+                onTitleChange = {},
+                description = "",
+                onDescriptionChange = {},
+                priority = Priority.LOW,
+                onPrioritySelected = {}
+            )
+        }
     )
 }
