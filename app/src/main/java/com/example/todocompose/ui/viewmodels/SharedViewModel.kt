@@ -55,13 +55,13 @@ class SharedViewModel @Inject constructor(
 
     fun getSelectedTask(taskId: Int) {
         viewModelScope.launch {
-            repository.getSelectedTask(taskId = taskId).collect{ task ->
+            repository.getSelectedTask(taskId = taskId).collect { task ->
                 _selectedTask.value = task
             }
         }
     }
 
-    private fun addTask(){
+    private fun addTask() {
         viewModelScope.launch(Dispatchers.IO) {
             val todoTask = ToDoTask(
                 title = title.value,
@@ -72,23 +72,40 @@ class SharedViewModel @Inject constructor(
         }
     }
 
+    private fun updateTask() {
+        viewModelScope.launch(Dispatchers.IO) {
+            val toDoTask = ToDoTask(
+                id = id.value,
+                title = title.value,
+                description = description.value,
+                priority = priority.value
+            )
+            repository.updateTask(toDoTask = toDoTask)
+        }
+    }
+
     fun handleDatabaseActions(action: Action) {
-        when(action) {
+        when (action) {
             Action.ADD -> {
                 addTask()
             }
-            Action.UPDATE -> {
 
+            Action.UPDATE -> {
+                updateTask()
             }
+
             Action.DELETE -> {
 
             }
+
             Action.DELETE_ALL -> {
 
             }
+
             Action.UNDO -> {
 
             }
+
             else -> {
 
             }
